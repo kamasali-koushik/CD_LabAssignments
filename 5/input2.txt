@@ -1,0 +1,3 @@
+S-> i C k S B | a
+B-> e S | #
+C-> d

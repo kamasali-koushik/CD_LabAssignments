@@ -1,0 +1,1 @@
+prog int id id ; while id < ic or id = ic do if fc > id then id := ic; end scan id end end

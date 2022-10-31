@@ -1,0 +1,27 @@
+3
+E->E+T|T
+T->T*F|F
+F->(E)|id
+
+2
+A->Bb|Aa|d
+B->c
+
+2
+B->Aa|b
+A->Bd|ε
+
+(A->Aa|b
+
+then new productions : A->bA' and A'->aA'|ε)
+
+
+Question 2:
+2
+A->aab|aabb|abab
+A->aaaaaa|aaaab|aaaba|ababc|aaaac|a|aa
+
+Question 3 :
+(id*id+id+id)+id
+id+id*id
+(id*id+(id+id)+id)+id

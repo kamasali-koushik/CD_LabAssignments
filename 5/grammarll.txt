@@ -1,0 +1,87 @@
+Given Grammar
+after removing left rec and 
+left factor:
+-----------------
+AE -> NE AE`
+AE` -> # | and NE AE`
+BE -> AE BE`
+BE` -> # | or AE BE`
+D -> TY VL ;
+DL -> # | D DL
+E -> T E`
+ES -> id := E ;
+E` -> # | + T E` | - T E`
+F -> ( E ) | fc | ic | id
+IOS -> print PE | scan id
+IS -> if BE then SL IS0
+IS0 -> else SL end | end
+NE -> RE | not NE | { BE }
+P -> prog DL SL end
+PE -> E | str
+RE -> E RE1
+RE1 -> < E | = E | > E
+S -> ES | IOS | IS | WS
+SL -> # | S SL
+T -> F T`
+TY -> float | int
+T` -> # | * F T` | / F T`
+VL -> id VL2
+VL2 -> VL | #
+WS -> while BE do SL end
+-----------------
+-----------------
+First of grammar
+AE -> ( fc ic id not {
+AE` -> # and
+BE -> ( fc ic id not {
+BE` -> # or
+D -> float int
+DL -> # float int
+E -> ( fc ic id
+ES -> id
+E` -> # + -
+F -> ( fc ic id
+IOS -> print scan
+IS -> if
+IS0 -> else end
+NE -> ( fc ic id not {
+P -> prog
+PE -> ( fc ic id str
+RE -> ( fc ic id
+RE1 -> < = >
+S -> id if print scan while
+SL -> # id if print scan while
+T -> ( fc ic id
+TY -> float int
+T` -> # * /
+VL -> id
+VL2 -> # id
+WS -> while
+-----------------
+Follow of grammar
+AE -> do or then }
+AE` -> do or then }
+BE -> do then }
+BE` -> do then }
+D -> end float id if int print scan while
+DL -> end id if print scan while
+E -> ) ; < = > and do else end id if or print scan then while }
+ES -> else end id if print scan while
+E` -> ) ; < = > and do else end id if or print scan then while }
+F -> ) * + - / ; < = > and do else end id if or print scan then while }
+IOS -> else end id if print scan while
+IS -> else end id if print scan while
+IS0 -> else end id if print scan while
+NE -> and do or then }
+P -> $
+PE -> else end id if print scan while
+RE -> and do or then }
+RE1 -> and do or then }
+S -> else end id if print scan while
+SL -> else end
+T -> ) + - ; < = > and do else end id if or print scan then while }
+TY -> id
+T` -> ) + - ; < = > and do else end id if or print scan then while }
+VL -> ;
+VL2 -> ;
+WS -> else end id if print scan while

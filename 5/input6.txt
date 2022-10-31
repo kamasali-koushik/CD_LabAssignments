@@ -1,0 +1,7 @@
+S-> S | a | b 
+A-> B r 
+B-> C d
+C-> A t 
+E-> E + T | E - T | T
+T-> T * F | T / F | F
+F-> ( E ) | id | ic | fc
